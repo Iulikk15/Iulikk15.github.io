@@ -1,0 +1,202 @@
+:root {
+  --alb: #ffffff;
+  --negru: #000000;
+  --gri: #666666;
+  --gri-deschis: #eeeeee;
+  --raza: 24px;
+  --font: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--negru);
+  background: var(--alb);
+}
+
+img { display: block; max-width: 100%; }
+a { color: var(--negru); }
+
+header {
+  border-bottom: 2px solid var(--negru);
+  padding: 15px 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  display: block;
+  padding: 6px 16px;
+  border: 1px solid var(--negru);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+nav a:hover { background: var(--negru); color: var(--alb); }
+nav a.activ { background: var(--negru); color: var(--alb); }
+
+main { max-width: 950px; margin: 0 auto; padding: 0 20px 60px; }
+
+.hero { text-align: center; padding: 50px 0 30px; }
+
+h1 { font-size: 38px; line-height: 1.2; margin-bottom: 12px; }
+h2 { font-size: 26px; margin: 50px 0 15px; }
+p { margin-bottom: 14px; }
+
+.intro { font-size: 18px; color: var(--gri); }
+
+.imagine {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px solid var(--negru);
+  border-radius: var(--raza);
+  transition: 0.2s;
+}
+
+.imagine:hover { opacity: 0.75; }
+
+.imagine.mare { aspect-ratio: 16 / 8; margin: 10px 0; }
+
+.doua-coloane {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.doua-coloane h2 { margin-top: 0; }
+
+.galerie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.carduri {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.card {
+  border: 2px solid var(--negru);
+  border-radius: var(--raza);
+  padding: 20px;
+  transition: 0.2s;
+}
+
+.card:hover { background: var(--gri-deschis); }
+.card h3 { font-size: 18px; margin-bottom: 6px; }
+.card p { margin: 0; }
+
+.card .simbol {
+  display: inline-block;
+  border: 1px solid var(--negru);
+  border-radius: 999px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.buton {
+  display: inline-block;
+  font: inherit;
+  padding: 10px 24px;
+  background: var(--negru);
+  color: var(--alb);
+  border: 2px solid var(--negru);
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buton:hover { background: var(--alb); color: var(--negru); }
+
+.hero .buton { margin-top: 15px; }
+
+.contact-pagina { margin-top: 20px; }
+.contact-pagina h2 { margin-top: 0; }
+
+form { max-width: 450px; }
+label { display: block; margin-bottom: 4px; }
+
+input, textarea {
+  width: 100%;
+  font: inherit;
+  padding: 8px;
+  border: 1px solid var(--negru);
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+textarea { height: 120px; resize: vertical; }
+
+iframe.harta {
+  display: block;
+  width: 100%;
+  height: 350px;
+  border: 2px solid var(--negru);
+  border-radius: var(--raza);
+  margin-top: 40px;
+}
+
+.echipa { grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; }
+.echipa .card { text-align: center; }
+
+.echipa .poza {
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  border: 2px solid var(--negru);
+  border-radius: 50%;
+}
+
+.echipa .rol { font-weight: bold; margin-bottom: 8px; }
+
+.centru { text-align: center; }
+
+.fapte { list-style: none; max-width: 600px; margin: 0 auto; }
+
+.fapte li {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--negru);
+}
+
+.fapte span { color: var(--gri); text-align: right; }
+
+footer {
+  border-top: 2px solid var(--negru);
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+}
+
+footer p { margin: 0; }
+
+@media (max-width: 800px) {
+  .doua-coloane, .carduri, .echipa { grid-template-columns: minmax(0, 1fr); }
+  .galerie { grid-template-columns: repeat(2, 1fr); }
+  h1 { font-size: 30px; }
+}
+
+@media (max-width: 500px) {
+  .galerie { grid-template-columns: 1fr; }
+}
